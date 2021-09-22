@@ -15,7 +15,7 @@ public interface RutineTrainingRespository extends JpaRepository<RoutineTraining
     @Query("SELECT rt FROM RoutineTraining rt WHERE rt.routineTrainingId = ?1")
     public List<RoutineTraining> listByRoutinTrainingId(int routineTrainingId);
 
-    @Query( value = "select * from routine_trainings rt where rt.rutine_id =?1" , nativeQuery = true)
+    @Query("SELECT rt.rutine.id, rt.training.id, t.name FROM RoutineTraining rt LEFT JOIN Training t ON t.id = rt.training.id WHERE rt.rutine.id =?1")
     public Page<RoutineTraining> listByRoutineId(Long routineId, Pageable pageable);
 
 }

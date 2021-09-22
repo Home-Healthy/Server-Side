@@ -60,6 +60,6 @@ public class RoutingTrainingServiceImpl implements RoutineTrainingService {
     public Page<RoutineTraining> getAllTrainingsByRoutineId(Long routingId, Pageable pageable ) {
        /* var existingRoutine = _routineRespository.findById(routingId)
                 .orElseThrow(()-> new ResourceNotFoundException("Routine", "Id", routingId));*/
-        return _routineTrainingRespository.listByRoutineId(routingId, pageable);
+       return _routineTrainingRespository.listByRoutineId(routingId, pageable);
     }
 }
